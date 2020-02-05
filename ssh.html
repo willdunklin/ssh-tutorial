@@ -1,0 +1,53 @@
+<html><head><style>body {
+   color: black;
+}
+</style></head><body><h1 id="how-to-create-and-read-files-on-a-remote-server">How to Create and Read Files on a Remote Server</h1>
+<p><strong>OUTLINE:</strong></p>
+<ol>
+<li>Connecting to a server via ssh</li>
+<li>Navigating the user directory</li>
+<li>Creating directories and files</li>
+<li>Writing and reading to files</li>
+</ol>
+<p>NOTE: the <code>$</code> indicates the use of the command line. Do not copy the <code>$</code> while typing commands.</p>
+<hr>
+<h4 id="1-">1.</h4>
+<p>First things first we need to connect to the remote server. To get started, in a command line (terminal for linux/mac, cmd/powershell for windows).</p>
+<pre><code><span class="hljs-variable">$ </span>ssh username<span class="hljs-variable">@ip</span>.address
+</code></pre><p>Enter password to connect.</p>
+<hr>
+<h4 id="2-">2.</h4>
+<p>Now we&#39;re connected to the server, it is useful to get acquainted with traversing directories.
+Here are some basic commands to get started.
+Print working dircetory:</p>
+<pre><code>$ <span class="hljs-built_in">pwd</span>
+</code></pre><p>List all files in current directory verbosely:</p>
+<pre><code>$ <span class="hljs-keyword">ls</span> -<span class="hljs-keyword">al</span>
+</code></pre><p>Change directory to <code>~</code> (home directory):</p>
+<pre><code>$ <span class="hljs-built_in">cd</span> ~
+</code></pre><p>Now we&#39;re at the home directory and ready to get started file creation.</p>
+<hr>
+<h4 id="3-">3.</h4>
+<p>A necessary function is to make new folders to create file structures and organization.
+To make and relocate to a new directory:</p>
+<pre><code>$ <span class="hljs-keyword">mkdir</span> <span class="hljs-keyword">test</span>
+</code></pre><pre><code>$ <span class="hljs-built_in">cd</span> <span class="hljs-built_in">test</span>
+</code></pre><p>Now we make a new file:</p>
+<pre><code><span class="hljs-variable">$ </span>touch hello.txt
+</code></pre><pre><code>$ <span class="hljs-keyword">ls</span> -<span class="hljs-keyword">al</span>
+</code></pre><p>With that list all command we can see that there is a new file in our test directory.</p>
+<hr>
+<h4 id="4-">4.</h4>
+<p>To access and edit that file with a text editor we can use <code>nano</code>:</p>
+<pre><code><span class="hljs-variable">$ </span>nano hello.txt
+</code></pre><p>Try to write something in <code>nano</code>, it doesn&#39;t matter what for now.
+Once you&#39;re done, do <code>^O ^X</code> to save and exit.</p>
+<pre><code>$ <span class="hljs-keyword">ls</span> -<span class="hljs-keyword">al</span>
+</code></pre><p>To read back the contents of what you just wrote in <code>hello.txt</code> we can use <code>cat</code>:</p>
+<pre><code><span class="hljs-variable">$ </span>cat hello.txt
+</code></pre><p>Now say we aren&#39;t happy with the contents of <code>hello.txt</code>. We can append a new line to the file using the <code>&gt;&gt;</code> operator.</p>
+<pre><code>$ echo <span class="hljs-string">"Hello"</span> <span class="hljs-meta">&gt;&gt; </span>hello.txt
+</code></pre><pre><code><span class="hljs-variable">$ </span>cat hello.txt
+</code></pre><hr>
+<p>Now we have sucessfully created our very own directory and file. This skillset is integral to interacting with remote linux servers and creating file structures through command line.</p>
+</body></html>

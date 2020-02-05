@@ -1,0 +1,46 @@
+How to create and read files on a remote server
+
+OUTLINE:
+1. Connecting to a server via ssh
+2. Navigating the user directory
+3. Creating directories and files
+4. Writing and reading to files
+
+----------------------------------
+1.
+In a command line (terminal for linux/mac, cmd/powershell for windows)
+$ ssh username@ip.address
+
+Enter password to connect
+
+2.
+Some basic things to get started:
+Print working dircetory
+$ pwd
+List all files in current directory verbosely
+$ ls -al
+Change directory to home directory
+$ cd ~
+
+3.
+Make a new directory
+$ mkdir test
+$ cd test
+Make a new file
+$ touch hello.txt
+$ ls -al
+
+4.
+Access that file with editor
+$ nano hello.txt
+Write something
+Then: ^O ^X to save and exit
+$ ls -al
+Read the contents of hello.txt
+$ cat hello.txt
+Append a new line
+$ echo "Hello" >> hello.txt
+$ cat hello.txt
+
+Now you have sucessfully created your very own directory and file. This skillset is integral to interacting with remote linux servers
+----------------------------------
